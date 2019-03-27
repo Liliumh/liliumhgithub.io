@@ -1,0 +1,53 @@
+html {
+    font-size: 20px; /* px quiere decir 'pixels': la base del tamaño de fuente es ahora de 1o pixeles*/
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(173, 174, 231);
+  }
+
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  p, li {
+    font-size: 16px;    
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+p {
+    color:#561F1F;
+    width: 500px;
+  }
+
+  body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: rgb(221, 220, 168);
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 20px 0;    
+    color: rgb(84, 83, 182);
+    text-shadow: 3px 3px 1px black;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .ex1 {
+    margin: 2rem 0px;
+    background: rgb(120, 124, 120);
+    width: 99%;
+  }
+  
+  .ex2 {
+    margin: 1rem 0px;
+    background: rgb(128, 170, 170);
+    width: 99%;
+  }

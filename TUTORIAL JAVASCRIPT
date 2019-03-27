@@ -1,0 +1,173 @@
+TUTORIAL JAVASCRIPT
+
+(Lenguaje de programación que debes usar para añadir características interactivas a tu Sitio Web, (por ejemplo, juegos, eventos que ocurren cuando los botones son presionados o los datos son introducidos en los formularios, efectos de estilo dinámicos, animación...)
+
+Añadir en scripts archivo: main.js
+
+-Todas las lineas en JS deben acabar en punto y coma para indicar que es ahí donde termina la línea.
+
+Añadir en index.html, antes de </body>:
+<script src="scripts/main.js"></script>
+
+Añadir en main.js:
+var myHeading = document.querySelector('h1');
+myHeading.innerHTML = 'Hello world!';
+
+Ctrl + Shift + I abrimos consola navegador
+
+VARIABLES: contenedores en los que puedes almacenar valores
+var nombreDeLaVariable;
+
+Tras declarar una variable, puedes asignarle un valor:
+nombreDeLaVariable = 'Bob';
+
+Puedes hacer las dos cosas en la misma línea si lo necesitas:
+var myVariable = 'Bob';
+
+Puedes obtener el valor de la variable llamándola por su nombre:
+myVariable;
+
+Después de haberle dado un valor a la variable, puedes volver a cambiarlo:
+var myVariable = 'Bob';
+myVariable = 'Steve';
+
+Tipos de datos:
+-String: cadena de texto, va entre comillas. EJ:
+var myVariable = 'Bob';
+
+-Number: Los números no tienen comillas.
+var myVariable = 10;
+
+-Boolean: Tienen valor verdadero/falso. true/false son palabras especiales en JS, y no necesitan comillas.
+var myVariable = true;
+
+Array: estructura que te permite almacenar varios valores en una sola referencia.
+var myVariable = [1,'Bob','Steve',10];
+Llama a cada miembro del array así: myVariable[0], myVariable[1], etc.
+
+-Object: Básicamente cualquier cosa. 
+var myVariable = document.querySelector('h1');
+Todos los ejemplos anteriores también.
+
+Comentarios:
+// Esto es un comentario
+
+/*
+Esto es un comentario
+de varias líneas.
+*/
+
+Operadores: símbolo matemático que puede actuar sobre dos valores (o variables) y producir un resultado.
+
+-Suma (+), resta (-), juntar dos cadenas (6 + 9;"Hola " + "mundo!";), multiplicación (*), división (/)
+
+-Operador de asignación (= o var myVariable = 'Bob';), 
+
+-identidad/igualdad (comprueba si son iguales y devuelve un valor (===) 
+var myVariable = 
+3;
+myVariable === 4;
+
+-Negación: (!, !== )
+var myVariable =
+3; 
+myVariable !== 3;
+
+
+Condicionales: structuras de código que permiten comprobar si una expresión devuelve true o no, y después ejecuta un código diferente dependiendo del resultado.
+if ... else
+Ej:
+var helado = 'chocolate';
+if (helado === 'chocolate') {
+  alert('¡Si, amo el helado de chocolate!');    
+} else {
+  alert('Awwww, pero mi favorito es el de chocolate...');    
+}
+
+Funciones: manera de encapsular una funcionalidad que quieres reutilizar, de manera que puedes llamar esa función con un solo nombre
+ejemplos:
+var myVariable = document.querySelector('h1');
+
+alert('Hola!');
+
+------------------------
+function multiplica(num1,num2) {
+  var resultado = num1 * num2;
+  return resultado;
+}
+
+Trata de ejecutar la función anterior en la consola. Después trata de usar la nueva función algunas veces, p.ej:
+
+multiplica(4,7);
+multiplica(20,20);
+multiplica(0.5,3);
+
+Eventos: ara crear una interacción real en tu sitio WEB
+document.querySelector('html').onclick = function() {
+    alert('Ouch! Deja de pincharme!');
+}
+
+(#Nota que
+
+document.querySelector('html').onclick = function(){};
+
+#es equivalente a
+
+var myHTML = document.querySelector('html');
+myHTML.onclick = function(){};
+
+#es solo un modo mas corto de escribirlo).
+-------------------------------------------------
+Añadiendo un cambiador de imagen:
+
+-Primero busca una imagen que sea del mismo tamaño que la primera, o lo más cerca posible.
+-Guarda tu imagen en tu carpeta images.
+-Renombra esta imagen 'firefox2.png' (sin las comillas).
+-Ve a tu archivo main.js, y agrega el siguiente JavaScript (si tu JavaScript de "Hola Mundo" está aún allí, bórralo).
+
+var myImage = document.querySelector('img');
+
+myImage.onclick = function () {
+    var mySrc = myImage.getAttribute('src');
+    if (mySrc === 'images/flor-lis-icon.jpg') {
+        myImage.setAttribute('src', 'images/owl-icon.jpg');
+    } else {
+        myImage.setAttribute('src', 'images/flor-lis-icon.jpg');
+    }
+}
+
+
+-Guarda todos los archivos y carga index.html en tu navegador. Ahora cuando hagas click en la imagen, ¡esta debe cambiar por otra!
+
+Añadiendo un mensaje de bienvenida personalizado
+
+-En index.html, agrega el siguiente código antes del elemento <script>:
+<button>Change user</button>
+
+-En main.js, agrega el siguiente código al final del archivo, exactamente como está escrito— Esto toma referencia a el nuevo botón que agregamos y al titulo, y los almacena en variables:
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
+
+-Agregar función:
+function setUserName() {
+  var myName = prompt('Please enter your name.');
+  localStorage.setItem('name', myName);
+  myHeading.textContent = 'Mozilla is cool, ' + myName;
+}
+
+Luego, agregamos este bloque if ... else 
+
+if(!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  var storedName = localStorage.getItem('name');
+  myHeading.textContent = 'Mozilla is cool, ' + storedName;
+}
+
+Finalmente, agregamos abajo el evento onclick que manipulará el botón, de modo que cuando sea pulsado se inicie la función  estableceNombreUsuario(). Esto permitirá al usuario establecer un nuevo nombre cada vez que lo desee al pulsar el botón:
+
+myButton.onclick = function() {
+  setUserName();
+}
+
+

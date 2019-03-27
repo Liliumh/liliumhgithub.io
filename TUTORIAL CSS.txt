@@ -1,0 +1,144 @@
+TUTORIAL CSS
+
+(Como HTML, CSS no es realmente un lenguaje de programación. Es un lenguaje de hojas de estilo).
+
+Crear archivo: style.css dentro de styles
+Para volver el texto de un color:
+p { #selector. selecciona el(los) elemento(s) a dar estilo (en este caso, los elementos: p
+  color: red; #color (propiedad), red (valor) y todo junto: declaración
+}
+
+#La estructura completa es llamada: regla
+
+Para aplicar el CSS al documento HTML:
+Dentro de <head>: <link href="style/style.css" rel="stylesheet" type="text/css">
+
+-Cada una de las reglas (aparte del selector) deben estar encapsulada entre corchetes ({}).
+-Dentro de cada declaración, debes usar los dos puntos (:) para separar la propiedad de su valor.
+-Dentro de cada regla, debes usar el punto y coma (;) para separar una declaración de la siguiente.
+Para modificar varios valores de propiedad a la vez, solo necesitas escribirlos separados por punto y coma (;):
+
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+
+Para seleccionar varios elementos y aplicar una sola regla sobre ellos:
+Se separan por comas. Ej:
+
+p,li,h1 {
+  color: red;
+}
+
+TIPOS DE SELECTOR
+
+-Selector de elemento:
+Ej: 
+
+p
+Selecciona <p>
+
+-Selector de identificación (ID):
+
+#my-id
+Selecciona <p id="my-id"> y <a id="my-id">
+
+-Selector de Clase:
+
+.my-class
+Selecciona <p class="my-class"> y <a class="my-class">
+
+-Selector de atributo:
+
+img[src]
+Selecciona <img src="myimage.png"> pero no <img>
+
+-Selector de Pseudo-clase: por ejemplo cuando el puntero esté sobre él.
+
+a:hover
+Selecciona <a>, pero solo cuando el puntero esté sobre el enlace.
+
+FUENTES Y TEXTO
+
+Añadir entre head: <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+Añadir en style.css: 
+html {
+  font-size: 10px; #px quiere decir 'pixels': la base del tamaño de fuente es ahora de 1o pixeles*/
+  font-family: #Este debe ser el resto del resultado que obtuviste de Google fonts
+}
+
+Tamaño de fuente para los elementos que contienen texto dentro del cuerpo del HTML: 
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+p, li {
+  font-size: 16px;    
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+CAJAS
+
+-relleno(padding), el espacio alrededor del contenido (ej: alrededor del texto de un párrafo)
+-marco(border), la línea que se encuentra fuera del relleno
+-margen(margin), el espacio fuera del elemento que lo separa de los demás.
+
+En esta sección también usamos:
+
+    width (ancho del elemento)
+    background-color, el color de fondo del contenido y del relleno
+    color, el color del contenido del elemento (generalmente texto)
+    text-shadow: coloca una sombra difuminada en el texto dentro del elemento
+    display: selecciona el modo de visualización para el elemento (no te preocupes de esto por ahora)
+
+Cambiar color fondo página:
+html {
+  background-color: #00539F;
+}
+
+Ordenando el Cuerpo:
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 20px 20px 20px; #Los valores se ponen: arribar, derecha, abajo e izquierda, en ese orden.
+  border: 5px solid black;
+}
+
+Posicionando y dando estilo a nuestro título de página principal:
+h1 {
+  margin: 0; #Para deshacernos de este espacio superior eliminamos el estilo por defecto
+  padding: 20px 0;    
+  color: #00539F;
+  text-shadow: 3px 3px 1px black; #1 desplazamiento horizontal, 2 verticasl, 3 radio desenfoque, 4 color
+}
+
+Centrando la imagen:
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+Más valores:
+html: 
+    <div class="ex1">Lil lo peta.</div>
+    <div class="ex2">LLL.</div>
+Css: Para añadir texto relleno de color
+.ex1 {
+  margin: auto;
+  background: gold;
+  width: 66%;
+}
+.ex2 {
+  margin: 20px 0px 0 -20px;
+  background: gold;
+  width: 66%;
+}
+
+
+

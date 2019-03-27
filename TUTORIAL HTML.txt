@@ -1,0 +1,83 @@
+TUTORIAL HTML 
+(HTML no es un lenguaje de programación; es un lenguaje de marcado que define la estructura de tu contenido)
+
+Crear carpeta: proyectos-web #nunca dejar espacios en blanco y escribir en minúscula. y dentro: sitio-prueba
+Crear carpetas: images, scripts, styles dentro de sitio-prueba
+Crear archivo: index.html Escribir:
+
+<!DOCTYPE html> #Tipo de documento
+<html> #El elemento raíz (encierra todo el contenido de la página)
+  <head> #Contenedor que incluye contenido no visible para los visitantes (CSS etc.)
+    <meta charset="utf-8"> #Elemento que establece el juego de caracteres que tu documento usará en utf-8 (maneja cualquier contenido de texto)
+    <title>My test page</title> #Título de la página en la pestaña del navegador
+  </head>
+  <body> #Encierra todo el contenido que deseas mostrar a los usuarios web (texto, imágenes, videos...)
+    <img src="#nombre carpeta/nombre imagen" alt="My test image"> #src () source, el cual contiene el path, la ubicación de la imagen).  alt (alternative, texto que debería describir la imagen, y que podría ser accedido por usuarios que no pueden ver la imagen)
+  </body>
+</html>
+
+
+
+Para enlazar un archivo que está en el directorio anterior al que contiene al archivo HTML, deberás escribir dos puntos (..)
+Ej: ../mi-imagen.png. o ../subcarpeta/otra-subcarpeta/mi-imagen.png.
+
+PARTES DE UN ELEMENTO: 
+-Etiqueta de apertura y de cierre: el nombre del elemento (ej: p) entrecerrado por paréntesis angulares < >
+-Contenido: texto
+-Atributos: 
+ Deben tener un espacio entre este y el nombre del elemento o del atributo previo
+ El nombre del atributo, seguido por un signo de igual =
+ Comillas de apertura y cierre encerrando el valor del atributo.
+
+El atributo class permite darle al elemento un nombre identificativo.
+
+Se puede colocar elementos dentro de elementos (Anidar elementos):  
+Ej: <strong> para enfatizar palabra. <p>Mi gato es <strong>muy</strong> gruñon.</p>
+
+Elementos vacíos: no poseen contenido. Ej: un elemento de imagen, <img>
+
+Elementos de encabezado: HTML posee seis niveles de encabezados, <h1>–<h6>
+Ej: <h1>Mi titulo principal</h1>
+    <h2>Mi titulo de nivel superior</h2>
+    <h3>Mi subtitulo</h3>
+    <h4>Mi sub-subtitulo</h4>
+    
+Párrafos: <p> </p> Dentro del body
+
+Listas: Cada elemento de la lista se coloca dentro de un elemento <li> (list item)
+-Ordenadas: El orden es relevante (lista compra). <ol> (ordered list)
+-Desordenadas: Orden no relevante (lista receta). <ul> (unordered list)
+
+Vínculos: 
+- <a> (la a es el diminutivo de "anchor" ("ancla"))
+- Atributo href (hypertext reference)
+- + dirección web con la que quieras conectar al vínculo
+
+Ej: <a href="https://www.mozilla.org/es-AR/about/manifesto/">Mozilla Manifesto</a>
+
+TODO QUEDARÍA ASÍ:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <h1>Mi título principal</h1>
+    <img src="images/firefox-icon.jpg" alt="My test image firefox icon">
+    <p>Este es un simple párrafo</p>
+    <p>En Mozilla, somos una comunidad de</p>
+    
+    <ul> 
+    <li>tecnólogos</li>
+    <li>pensadores</li>
+    <li>constructores</li>
+    </ul>
+    <p>trabajando juntos... </p>
+
+    <a href="https://www.mozilla.org/es-AR/about/manifesto/">Mozilla Manifesto</a>
+  </body>
+</html>
+
+
+
